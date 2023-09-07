@@ -8,10 +8,11 @@
 size_t countArgs(char *str)
 {
 	size_t args = 1;
-	while (str)
+	while (*str)
 	{
-		args = *str == ',' && (*(str + 1) == '"'
-		|| (*(str + 1) == ' ' && *(str + 2) == '"'))? args + 1: args;
+		args = *str == ',' && (*(str + 1) == '{'
+		|| (*(str + 1) == ' ' && *(str + 2) == '{'))? args + 1: args;
+
 		str++;
 	}
 	return (args);
