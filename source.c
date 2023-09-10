@@ -17,6 +17,20 @@ size_t display(char *str)
 	{
 		if (!checkSepa(disp.args[i]))
 			errorFormat();
+		i++;
+	}
+	i = 0;
+	parammiter();
+	/* setParammiter(); */
+	while (disp.para && disp.para[i])
+	{
+		out(disp.para[i]);
+		out("\n");
+		i++;
+	}
+	i = 1;
+	while (disp.args[i])
+	{
 		out(disp.args[i]);
 		out(" ");
 		i++;
